@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { ArrowLeft } from '@phosphor-icons/react';
 import { useTranslation } from '@/lib/i18n';
 import { localePath } from '@/lib/paths';
 import SiteHeader from './SiteHeader';
@@ -38,7 +38,7 @@ export default function LegalPage({
             href={localePath(locale, '/')}
             className="inline-flex items-center gap-2 text-sm text-[var(--muted)] hover:text-[var(--foreground)]"
           >
-            <ArrowLeftIcon className="size-4" />
+            <ArrowLeft className="size-4" weight="bold" />
             {t.terms.backToHome}
           </Link>
         </ClientOnly>

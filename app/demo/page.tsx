@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import {
-  ArrowLeftIcon,
-  CheckCircleIcon,
-  RocketLaunchIcon,
-  InboxArrowDownIcon,
-} from '@heroicons/react/24/outline';
+  ArrowLeft,
+  CheckCircle,
+  RocketLaunch,
+  Package,
+  Translate,
+  MagicWand,
+} from '@phosphor-icons/react';
 import { useTranslation } from '@/lib/i18n';
 import { localePath } from '@/lib/paths';
 import SiteHeader from '../components/SiteHeader';
@@ -20,15 +22,15 @@ export default function Demo() {
 
   const setupItems = [
     {
-      icon: InboxArrowDownIcon,
+      icon: Package,
       ...t.demo.setup.installed,
     },
     {
-      icon: RocketLaunchIcon,
+      icon: RocketLaunch,
       ...t.demo.setup.running,
     },
     {
-      icon: CheckCircleIcon,
+      icon: CheckCircle,
       ...t.demo.setup.permissions,
     },
   ];
@@ -42,7 +44,7 @@ export default function Demo() {
             href={localePath(locale, '/')}
             className="inline-flex items-center gap-2 text-sm text-[var(--muted)] hover:text-[var(--foreground)]"
           >
-            <ArrowLeftIcon className="size-4" />
+            <ArrowLeft className="size-4" weight="bold" />
             {t.demo.backToHome}
           </Link>
         </ClientOnly>
@@ -58,7 +60,7 @@ export default function Demo() {
               key={item.title}
               className="flex items-start gap-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5"
             >
-              <item.icon className="mt-0.5 size-6 shrink-0" />
+              <item.icon className="mt-0.5 size-6 shrink-0" weight="regular" />
               <div>
                 <h2 className="font-semibold">{item.title}</h2>
                 <p className="mt-1 text-sm text-[var(--muted)]">
@@ -75,9 +77,12 @@ export default function Demo() {
 
         <div className="mt-8 space-y-10">
           <section>
-            <h3 className="text-xl font-semibold">
-              {t.demo.translation.title}
-            </h3>
+            <div className="flex items-center gap-2.5">
+              <Translate className="size-5 shrink-0" weight="regular" />
+              <h3 className="text-xl font-semibold">
+                {t.demo.translation.title}
+              </h3>
+            </div>
             <p className="mt-2 text-sm text-[var(--muted)]">
               {t.demo.translation.instruction}
             </p>
@@ -87,7 +92,10 @@ export default function Demo() {
           </section>
 
           <section>
-            <h3 className="text-xl font-semibold">{t.demo.generate.title}</h3>
+            <div className="flex items-center gap-2.5">
+              <MagicWand className="size-5 shrink-0" weight="regular" />
+              <h3 className="text-xl font-semibold">{t.demo.generate.title}</h3>
+            </div>
             <p className="mt-2 text-sm text-[var(--muted)]">
               {t.demo.generate.instruction}
             </p>

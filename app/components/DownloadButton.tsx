@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { DownloadSimple } from '@phosphor-icons/react';
 
 declare global {
   interface Window {
@@ -45,7 +45,7 @@ export default function DownloadButton({
         window.location.href = DOWNLOAD_URL;
       }}
     >
-      {showIcon && <ArrowDownTrayIcon className="size-4" />}
+      {showIcon && <DownloadSimple className="size-4" weight="bold" />}
       {label}
     </a>
   );

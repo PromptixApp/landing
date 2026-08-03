@@ -1,20 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono, Outfit } from "next/font/google";
 import Providers from "./components/Providers";
 import "./globals.css";
 import { buildPageMetadata } from "@/lib/seo";
-
-const outfit = Outfit({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin", "latin-ext", "cyrillic"],
-  variable: "--font-mono",
-  weight: ["400", "500", "600"],
-});
 
 const homeMeta = buildPageMetadata("en", "home");
 
@@ -83,9 +70,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${outfit.variable} ${jetbrainsMono.variable} font-sans antialiased`}
-      >
+      <body className="font-sans antialiased">
         <Providers>{children}</Providers>
         <script
           dangerouslySetInnerHTML={{
@@ -96,7 +81,7 @@ export default function RootLayout({
                     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
                     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
                 })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
-                ym(103404911, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+                ym(103404911, 'init', {webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 
                 !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
 },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',

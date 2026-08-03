@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { List, X } from '@phosphor-icons/react';
 import { useTranslation } from '@/lib/i18n';
-import { localePath } from '@/lib/paths';
+import { assetPath, localePath } from '@/lib/paths';
 import LanguageSwitcher from './LanguageSwitcher';
 import ClientOnly from './ClientOnly';
 
@@ -44,7 +44,7 @@ export default function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href={home} className="flex items-center gap-2.5">
           <Image
-            src="/logo-ycode.webp"
+            src={assetPath('/logo-ycode.webp')}
             alt="Promptix"
             width={140}
             height={32}
@@ -76,9 +76,9 @@ export default function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
         >
           {open ? (
-            <XMarkIcon className="size-6" />
+            <X className="size-6" weight="regular" />
           ) : (
-            <Bars3Icon className="size-6" />
+            <List className="size-6" weight="regular" />
           )}
         </button>
       </div>

@@ -17,7 +17,7 @@ export default function PricingPage() {
         <PricingSection />
         <FaqSection />
         <section className="mx-auto max-w-3xl px-4 pb-20 text-center sm:px-6">
-          <h2 className="text-3xl font-semibold tracking-tight">
+          <h2 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
             {t.cta.title}
           </h2>
           <div className="mt-6">

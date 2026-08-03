@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from '@/lib/i18n';
-import { localePath } from '@/lib/paths';
+import { assetPath, localePath } from '@/lib/paths';
 
 export default function SiteFooter() {
   const { t, locale } = useTranslation();
@@ -14,7 +14,7 @@ export default function SiteFooter() {
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
           <div>
             <Image
-              src="/logo-ycode.webp"
+              src={assetPath('/logo-ycode.webp')}
               alt="Promptix"
               width={120}
               height={28}

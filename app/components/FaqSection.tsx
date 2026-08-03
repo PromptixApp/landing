@@ -1,7 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import {
+  AppWindow,
+  GearSix,
+  ShieldCheck,
+  Key,
+  PencilSimple,
+  Gauge,
+  Plus,
+} from '@phosphor-icons/react';
 import { useTranslation } from '@/lib/i18n';
+
+const faqIcons = [AppWindow, GearSix, ShieldCheck, Key, PencilSimple, Gauge];
 
 export default function FaqSection() {
   const { t } = useTranslation();
@@ -9,12 +20,13 @@ export default function FaqSection() {
 
   return (
     <section id="faq" className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-      <h2 className="text-balance text-center text-3xl font-semibold tracking-tight sm:text-4xl">
+      <h2 className="text-balance text-center text-4xl font-semibold tracking-tight sm:text-5xl">
         {t.faq.title}
       </h2>
       <div className="mt-10 divide-y divide-[var(--border)] border-y border-[var(--border)]">
         {t.faq.items.map((item, index) => {
           const open = openIndex === index;
+          const Icon = faqIcons[index] ?? AppWindow;
           return (
             <div key={item.question}>
               <button
@@ -23,19 +35,24 @@ export default function FaqSection() {
                 onClick={() => setOpenIndex(open ? null : index)}
                 aria-expanded={open}
               >
-                <span className="text-pretty text-base font-medium">
-                  {item.question}
+                <span className="flex min-w-0 items-center gap-3">
+                  <Icon
+                    className="size-5 shrink-0 text-[var(--muted)]"
+                    weight="regular"
+                  />
+                  <span className="text-pretty text-lg font-medium">
+                    {item.question}
+                  </span>
                 </span>
-                <span
+                <Plus
                   className={[
-                    'inline-block text-xl text-[var(--muted)] transition-transform duration-200 ease-[var(--ease-out)]',
+                    'size-5 shrink-0 text-[var(--muted)] transition-transform duration-200 ease-[var(--ease-out)]',
                     'motion-reduce:transition-none',
                     open ? 'rotate-45' : 'rotate-0',
                   ].join(' ')}
+                  weight="bold"
                   aria-hidden
-                >
-                  +
-                </span>
+                />
               </button>
               <div
                 className={[
@@ -47,7 +64,7 @@ export default function FaqSection() {
                 <div className="overflow-hidden">
                   <p
                     className={[
-                      'pb-5 text-pretty text-sm leading-relaxed text-[var(--muted)] transition-opacity duration-200 ease-[var(--ease-out)]',
+                      'pb-5 text-pretty text-base leading-relaxed text-[var(--muted)] transition-opacity duration-200 ease-[var(--ease-out)]',
                       'motion-reduce:transition-none',
                       open ? 'opacity-100' : 'opacity-0',
                     ].join(' ')}

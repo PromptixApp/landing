@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://promptix.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/pricing/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/pricing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/pricing/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/ru/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/pricing/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/pricing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/pricing/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/terms/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/terms/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/ru/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/terms/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/terms/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/privacy/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/ru/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/privacy/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/personal-data/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/personal-data/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/personal-data/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/personal-data/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/ru/personal-data/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/personal-data/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/personal-data/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/personal-data/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/demo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/demo/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/demo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/demo/" />
+  </url>
+  <url>
+    <loc>https://promptix.app/ru/demo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://promptix.app/demo/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://promptix.app/ru/demo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promptix.app/demo/" />
+  </url>
+</urlset>

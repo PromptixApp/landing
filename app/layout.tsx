@@ -60,15 +60,23 @@ export default function RootLayout({
               gtag('config', 'AW-17526347150');
               
               function gtag_report_conversion(url) {
+                var called = false;
+
                 var callback = function () {
-                  if (typeof(url) != 'undefined') {
-                    window.location = url;
-                  }
+                  if (called) return;
+                  called = true;
+                  if (url) window.location.href = url;
                 };
+
                 gtag('event', 'conversion', {
-                    'send_to': 'AW-17526347150/JrUfCIKx55MbEI6rm6VB',
-                    'event_callback': callback
+                  'send_to': 'AW-17526347150/-hXmCMvKo_cbEI6rm6VB',
+                  'value': 1.0,
+                  'currency': 'USD',
+                  'event_callback': callback
                 });
+
+                setTimeout(callback, 900);
+
                 return false;
               }
             `,

@@ -31,10 +31,8 @@ jobs:
         run: npm ci
 
       - name: Build static site
+        # Custom domain promptix.app serves from site root (no /landing basePath).
         run: npm run build
-        env:
-          # GitHub project Pages URL: https://promptixapp.github.io/landing/
-          PAGES_BASE_PATH: /landing
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -36,7 +36,7 @@ export default function Home() {
         <section className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(244,244,245,0.9),_transparent_55%),linear-gradient(180deg,#ffffff_0%,#f4f4f5_45%,#ffffff_100%)]" />
           <div className="relative mx-auto max-w-4xl px-4 pb-10 pt-16 text-center sm:px-6 sm:pt-24">
-            <h1 className="animate-fade-up text-balance text-5xl font-semibold tracking-tight sm:text-7xl">
+            <h1 className="animate-fade-up text-balance text-5xl font-bold tracking-tighter sm:text-7xl">
               {t.header.title}
               <br />
               {t.header.titleLine2}
@@ -53,7 +53,7 @@ export default function Home() {
           </div>
 
           <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
-            <div className="animate-fade-in overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
+            <div className="animate-fade-in overflow-hidden rounded-2xl border-2 border-white/70 bg-[var(--surface)] shadow-[0_16px_48px_-12px_rgba(0,0,0,0.28),0_4px_16px_-4px_rgba(0,0,0,0.12)]">
               <video
                 className="aspect-video w-full object-cover"
                 autoPlay
@@ -99,7 +99,7 @@ export default function Home() {
               const Icon = useCaseIcons[index];
               return (
                 <div key={uc.title} className="text-left">
-                  <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+                  <div className="overflow-hidden rounded-2xl border-2 border-white/70 bg-[var(--surface)] shadow-[0_16px_48px_-12px_rgba(0,0,0,0.28),0_4px_16px_-4px_rgba(0,0,0,0.12)]">
                     <video
                       className="aspect-video w-full object-cover"
                       autoPlay
@@ -137,7 +137,7 @@ export default function Home() {
                   {t.feature.titleLine2}
                 </h2>
               </div>
-              <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--background)]">
+              <div className="overflow-hidden rounded-2xl border-2 border-white/70 bg-[var(--background)] shadow-[0_16px_48px_-12px_rgba(0,0,0,0.28),0_4px_16px_-4px_rgba(0,0,0,0.12)]">
                 <video
                   className="aspect-video w-full object-cover"
                   autoPlay
@@ -154,7 +154,7 @@ export default function Home() {
                 const Icon = featureIcons[index];
                 return (
                   <div key={item.name}>
-                    <div className="flex size-12 items-center justify-center rounded-2xl bg-[var(--background)]">
+                    <div className="flex size-12 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--background)] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.12)]">
                       <Icon className="size-6" weight="regular" />
                     </div>
                     <h3 className="mt-4 text-xl font-semibold">{item.name}</h3>
@@ -185,7 +185,7 @@ export default function Home() {
                 <DownloadButton label={t.promptAsApp.downloadButton} />
               </div>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+            <div className="overflow-hidden rounded-2xl border-2 border-white/70 bg-[var(--surface)] shadow-[0_16px_48px_-12px_rgba(0,0,0,0.28),0_4px_16px_-4px_rgba(0,0,0,0.12)]">
               <video
                 className="aspect-video w-full object-cover"
                 autoPlay
@@ -202,7 +202,7 @@ export default function Home() {
               const Icon = promptAsAppIcons[index];
               return (
                 <div key={item.title}>
-                  <div className="flex size-12 items-center justify-center rounded-2xl bg-[var(--surface)]">
+                  <div className="flex size-12 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.12)]">
                     <Icon className="size-6" weight="regular" />
                   </div>
                   <div className="mt-4 flex items-center gap-2">

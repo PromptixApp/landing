@@ -31,7 +31,7 @@ export default function DownloadButton({
       href={DOWNLOAD_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`pressable inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--accent-text)] hover:opacity-90 ${className}`}
+      className={`pressable inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--accent-text)] shadow-[0_2px_10px_-2px_rgba(0,0,0,0.35)] hover:opacity-90 ${className}`}
       onClick={(e) => {
         e.preventDefault();
         if (typeof window === 'undefined') return;

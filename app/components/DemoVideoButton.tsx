@@ -29,30 +29,27 @@ export default function DemoVideoButton({
   }, []);
 
   useEffect(() => {
-    let timeoutId: ReturnType<typeof setTimeout> | undefined;
-    let rafId: number | undefined;
-
     if (open) {
       setRendered(true);
-      rafId = requestAnimationFrame(() => {
+      const rafId = requestAnimationFrame(() => {
         setVisible(true);
       });
       const prev = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
       return () => {
-        if (rafId !== undefined) cancelAnimationFrame(rafId);
+        cancelAnimationFrame(rafId);
         document.body.style.overflow = prev;
       };
     }
 
     setVisible(false);
     videoRef.current?.pause();
-    timeoutId = setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setRendered(false);
     }, 200);
 
     return () => {
-      if (timeoutId !== undefined) clearTimeout(timeoutId);
+      clearTimeout(timeoutId);
     };
   }, [open]);
 

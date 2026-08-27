@@ -9,20 +9,26 @@ export default function SiteFooter() {
   const { t, locale } = useTranslation();
 
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--surface)]">
+    <footer className="px-mesh px-mesh--hero px-mesh--footer">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 sm:px-6">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
           <div>
             <Image
-              src={assetPath('/logo-ycode.webp')}
+              src={assetPath('/logo.svg')}
               alt="Promptix"
-              width={120}
+              width={125}
               height={28}
               className="h-7 w-auto"
             />
           </div>
 
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--muted)]">
+            <Link
+              href={`${localePath(locale, '/')}#prompt-as-app`}
+              className="hover:text-[var(--foreground)]"
+            >
+              {t.footer.promptAsApp}
+            </Link>
             <Link
               href={localePath(locale, '/pricing/')}
               className="hover:text-[var(--foreground)]"
@@ -58,7 +64,7 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-2 border-t border-[var(--border)] pt-6 text-center text-xs text-[var(--muted)]">
+        <div className="flex flex-col items-center gap-2 text-center text-xs text-[var(--muted)]">
           {locale === 'ru' && (
             <p>
               {t.footer.legal}{' '}

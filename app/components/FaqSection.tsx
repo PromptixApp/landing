@@ -7,12 +7,27 @@ import {
   ShieldCheck,
   Key,
   PencilSimple,
+  Cube,
   Gauge,
+  LockSimple,
+  CalendarBlank,
+  ArrowsLeftRight,
   Plus,
 } from '@phosphor-icons/react';
 import { useTranslation } from '@/lib/i18n';
 
-const faqIcons = [AppWindow, GearSix, ShieldCheck, Key, PencilSimple, Gauge];
+const faqIcons = [
+  AppWindow,
+  GearSix,
+  ShieldCheck,
+  Key,
+  PencilSimple,
+  Cube,
+  Gauge,
+  LockSimple,
+  CalendarBlank,
+  ArrowsLeftRight,
+];
 
 export default function FaqSection() {
   const { t } = useTranslation();

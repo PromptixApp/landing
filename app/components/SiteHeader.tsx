@@ -2,20 +2,42 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState, type MouseEvent } from 'react';
+import { createPortal } from 'react-dom';
 import { List, X } from '@phosphor-icons/react';
 import { useTranslation } from '@/lib/i18n';
 import { assetPath, localePath } from '@/lib/paths';
 import LanguageSwitcher from './LanguageSwitcher';
 import ClientOnly from './ClientOnly';
 
+function scrollHomeHash(
+  event: MouseEvent<HTMLAnchorElement>,
+  home: string,
+  hash: string,
+) {
+  const path = window.location.pathname;
+  const onHome = path === home || `${path}/` === home;
+  if (!onHome) return;
+  event.preventDefault();
+  document.getElementById(hash.slice(1))?.scrollIntoView();
+  window.history.replaceState(null, '', `${home}${hash}`);
+}
+
 export default function SiteHeader() {
   const { t, locale } = useTranslation();
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [rendered, setRendered] = useState(false);
   const [panelVisible, setPanelVisible] = useState(false);
+  const menuId = useId();
   const home = localePath(locale, '/');
   const pricing = localePath(locale, '/pricing/');
+  const promptAsApp = `${home}#prompt-as-app`;
+  const faq = `${home}#faq`;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
@@ -24,13 +46,15 @@ export default function SiteHeader() {
     if (open) {
       setRendered(true);
       rafId = requestAnimationFrame(() => {
-        setPanelVisible(true);
+        rafId = requestAnimationFrame(() => {
+          setPanelVisible(true);
+        });
       });
     } else {
       setPanelVisible(false);
       timeoutId = setTimeout(() => {
         setRendered(false);
-      }, 200);
+      }, 220);
     }
 
     return () => {
@@ -39,27 +63,96 @@ export default function SiteHeader() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+
+  const menu =
+    mounted && rendered
+      ? createPortal(
+          <>
+            <div
+              className="px-nav-scrim"
+              onClick={() => setOpen(false)}
+            />
+            <nav
+              id={menuId}
+              data-visible={panelVisible ? '' : undefined}
+              className="px-nav-menu"
+            >
+              <Link
+                href={promptAsApp}
+                onClick={(event) => {
+                  setOpen(false);
+                  scrollHomeHash(event, home, '#prompt-as-app');
+                }}
+                className="px-nav-menu-item"
+              >
+                {t.nav.promptAsApp}
+              </Link>
+              <Link
+                href={pricing}
+                onClick={() => setOpen(false)}
+                className="px-nav-menu-item"
+              >
+                {t.nav.pricing}
+              </Link>
+              <Link
+                href={faq}
+                onClick={(event) => {
+                  setOpen(false);
+                  scrollHomeHash(event, home, '#faq');
+                }}
+                className="px-nav-menu-item"
+              >
+                {t.nav.faq}
+              </Link>
+              <div className="px-nav-menu-item px-nav-menu-lang">
+                <ClientOnly>
+                  <LanguageSwitcher variant="ghost" />
+                </ClientOnly>
+              </div>
+            </nav>
+          </>,
+          document.body,
+        )
+      : null;
+
   return (
-    <header className="bg-[var(--background)]">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href={home} className="flex items-center gap-2.5">
+    <header className={['relative bg-transparent', open ? 'z-[62]' : ''].filter(Boolean).join(' ')}>
+      <div className="relative z-50 mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+        <Link href={home} className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <Image
-            src={assetPath('/logo-ycode.webp')}
+            src={assetPath('/logo.svg')}
             alt="Promptix"
-            width={140}
-            height={32}
+            width={125}
+            height={28}
             priority
-            className="h-8 w-auto"
+            className="h-7 w-auto"
           />
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm text-[var(--muted)] md:flex">
-          <Link href={pricing} className="hover:text-[var(--foreground)]">
+        <nav className="hidden items-center gap-8 text-base font-medium tracking-tight text-[var(--foreground)] md:flex">
+          <Link
+            href={promptAsApp}
+            onClick={(event) => scrollHomeHash(event, home, '#prompt-as-app')}
+            className="px-nav-link pressable"
+          >
+            {t.nav.promptAsApp}
+          </Link>
+          <Link href={pricing} className="px-nav-link pressable">
             {t.nav.pricing}
           </Link>
           <Link
-            href={`${localePath(locale, '/')}#faq`}
-            className="hover:text-[var(--foreground)]"
+            href={faq}
+            onClick={(event) => scrollHomeHash(event, home, '#faq')}
+            className="px-nav-link pressable"
           >
             {t.nav.faq}
           </Link>
@@ -70,9 +163,10 @@ export default function SiteHeader() {
 
         <button
           type="button"
-          className="pressable md:hidden"
+          className="pressable -mr-1 flex size-10 items-center justify-center rounded-full md:hidden"
           aria-label="Menu"
           aria-expanded={open}
+          aria-controls={menuId}
           onClick={() => setOpen((v) => !v)}
         >
           {open ? (
@@ -82,39 +176,7 @@ export default function SiteHeader() {
           )}
         </button>
       </div>
-
-      {rendered && (
-        <div
-          className={[
-            'border-t border-[var(--border)] px-4 py-4 md:hidden',
-            'transition-[opacity,transform] duration-200 ease-[var(--ease-out)]',
-            'motion-reduce:transition-[opacity] motion-reduce:duration-150 motion-reduce:transform-none',
-            panelVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 -translate-y-1 pointer-events-none',
-          ].join(' ')}
-        >
-          <div className="flex flex-col gap-3 text-sm">
-            <Link
-              href={pricing}
-              onClick={() => setOpen(false)}
-              className="text-[var(--muted)]"
-            >
-              {t.nav.pricing}
-            </Link>
-            <Link
-              href={`${localePath(locale, '/')}#faq`}
-              onClick={() => setOpen(false)}
-              className="text-[var(--muted)]"
-            >
-              {t.nav.faq}
-            </Link>
-            <ClientOnly>
-              <LanguageSwitcher />
-            </ClientOnly>
-          </div>
-        </div>
-      )}
+      {menu}
     </header>
   );
 }

@@ -2,219 +2,314 @@ import type { Translation } from './en';
 
 export const ru: Translation = {
   meta: {
-    title: "Promptix — AI в любом приложении по хоткею",
+    title: "Promptix — превращай промпты в приложения",
     description:
-      "Один быстрый способ редактировать, переписывать и переводить текст и немного больше. Прямо там, где ты работаешь.",
+      "Запусти промпт как приложение из Dock. Или выдели текст и вызови AI хоткеем в любом окне.",
   },
 
   nav: {
+    promptAsApp: "Как приложение",
     pricing: "Тарифы",
-    faq: "FAQ",
+    faq: "Вопросы",
     terms: "Условия использования",
     privacy: "Конфиденциальность",
     demo: "Демо",
   },
 
   header: {
-    title: "Хватит переключаться",
-    titleLine2: "между приложениями и\u00A0AI",
-    subtitle:
-      "Один быстрый способ редактировать, переписывать и\u00A0переводить текст и\u00A0немного больше. Прямо там, где\u00A0ты работаешь.",
-    downloadButton: "Скачать для MacOS",
-    downloadHint: "начни бесплатно · карта не\u00A0нужна",
-    compatibility: "Поддерживаем популярные AI-сервисы",
-    compatibilityNote: "и\u00A0другие, совместимые с\u00A0OpenAI SDK",
+    title: "Превращай промпты в приложения",
+    titleLine2: "Из Dock и Spotlight —",
+    subtitle: "или хоткеем в любом окне.",
+    downloadButton: "Скачать для macOS",
+    downloadHint: "Бесплатно · Pro на 7 дней",
+    demoAria: "Демо Promptix",
+    demoClose: "Закрыть",
+    compatibility: "Работает с",
+    compatibilityNote: "и\u00A0любым API в\u00A0формате OpenAI",
+  },
+
+  heroScene: {
+    appName: "Почта",
+    clock: "Ср 11:46",
+    toLabel: "Кому",
+    toValue: "Команда",
+    subjectLabel: "Тема",
+    subjectValue: "Полёт на Марс",
+    before:
+      "Привет команда, мы достиг важный успех в полёте на Марс. Тесты был положительные.",
+    after:
+      "Привет, команда, мы достигли важного успеха в полёте на Марс. Тесты были положительными.",
+    model: "Модель по умолчанию",
+    select: "Выбрать ↵",
+    esc: "Esc ✕",
+    run: "↵",
+    hint: "↑↓ навигация • Enter запуск • Esc закрыть",
+    appField: "Текст",
+    appRun: "Запустить",
+    appPin: "Поверх окон",
+    prompts: [
+      "Перевести",
+      "Переписать",
+      "Улучшить",
+      "Исправить ошибки",
+      "Кратко",
+    ],
+    destinations: ["Окно", "Заменить", "Уведомление"],
   },
 
   useCases: {
-    title: "Кейсы",
-    subtitle:
-      "Автоматизируйте рутинные задачи и\u00A0освободите время для\u00A0более важных дел. Используйте продукт в\u00A0любых приложениях.",
+    title: "Или в любом приложении",
+    subtitle: "выдели текст, нажми хоткей —\u00A0готово.",
+    placeholder: "Написать сообщение...",
+    hotkeyHint: "Нажми хоткей",
     list: [
       {
         title: "Исправить ошибки",
-        description:
-          "Автоматически исправляйте грамматику и\u00A0орфографию, не\u00A0прерывая при\u00A0этом работу.",
-        videoSrc: "/media/promptix-fix.mp4",
+        description: "и опечатки, не\u00A0выходя из\u00A0окна.",
+        scene: {
+          before: "Прив, как дила",
+          after: "Привет, как дела?",
+        },
       },
       {
         title: "Перевести",
-        description:
-          "Мгновенно переведите выделенный текст на\u00A0любой язык с\u00A0помощью одного сочетания клавиш.",
-        videoSrc: "/media/promptix-translate.mp4",
+        description: "выделенный текст на другой язык.",
+        scene: {
+          before: "Hi, how are you?",
+          after: "Привет, как дела?",
+        },
       },
       {
-        title: "Создать текст",
-        description:
-          "Создавайте электронные письма, сообщения и\u00A0заметки за\u00A0считанные секунды.",
-        videoSrc: "/media/promptix-gen-text.mp4",
+        title: "Написать текст",
+        description: "для письма, поста или заметки из короткого запроса.",
+        scene: {
+          before: "напиши пост про GPT-5",
+          after: "Вышел GPT-5. Больше контекста, ответы точнее — чат тот же.",
+        },
       },
     ],
   },
 
   feature: {
-    eyebrow: "Feature",
-    title: "Создавайте собственные промпты для\u00A0задач",
-    titleLine2: "и\u00A0используйте их в\u00A0любое\u00A0время",
-    videoSrc: "/media/promptix-new.mp4",
+    eyebrow: "Промпты",
+    title: "Автоматизируй",
+    titleLine2: "свои рутинные задачи",
+    form: {
+      title: "Опиши задачу",
+      subtitle: "Скажи, что нужно сделать. Promptix напишет промпт.",
+      sample: "Переведи выделенный текст на английский, сохрани тон",
+      generate: "Создать",
+      cancel: "Отмена",
+      previewItems: [
+        "Перевести",
+        "Переписать",
+        "Улучшить",
+        "Исправить ошибки",
+        "Кратко",
+      ],
+    },
     items: [
       {
-        name: "API Key",
-        description:
-          "Используйте собственные ключи API без ограничений по\u00A0количеству запросов",
+        name: "Опиши задачу",
+        description: "и Promptix напишет промпт.",
       },
       {
-        name: "5+ встроенных промптов",
-        description:
-          "Перевод, рерайт, улучшение текста, исправление грамматики, подведение итогов",
+        name: "Назначь хоткей",
+        description: "и запускай из любого\u00A0окна.",
       },
       {
-        name: "Совместим с OpenAI SDK",
+        name: "5+ готовых промптов",
         description:
-          "Используйте любой LLM, поддерживающий формат API\u00A0OpenAI.",
+          "перевести, переписать, улучшить, исправить, кратко.",
+      },
+      {
+        name: "Голосом",
+        description: "скажи, выбери, запусти.",
       },
     ],
   },
 
+  apiBalance: {
+    eyebrow: "Дополнительно",
+    title: "Следи за балансом",
+    description: "своих AI-провайдеров.",
+    menu: {
+      openActions: "Открыть действия",
+      settings: "Настройки",
+      latestResponse: "Последний ответ",
+      checkUpdates: "Проверить обновления",
+      quit: "Выйти из Promptix",
+      spent: "потрачено",
+    },
+  },
+
   promptAsApp: {
-    badge: "Alpha version",
-    title: "Prompt as App",
-    description:
-      "Позволяет превратить обычный промпт в\u00A0полноценное приложение. Вы создаёте логику работы с\u00A0помощью промпта, сохраняете её как\u00A0приложение и\u00A0запускаете отдельно — без\u00A0необходимости каждый раз настраивать или\u00A0переписывать запрос.",
-    downloadButton: "Скачать для MacOS",
-    videoSrc: "/media/0814-1.mp4",
+    title: "Промпт как приложение,",
+    description: "открой, заполни, запусти.",
+    downloadButton: "Скачать для macOS",
     items: [
       {
-        title: "Приложение в Launchpad",
-        description:
-          "Созданное приложение отображается в\u00A0Launchpad и\u00A0доступно для\u00A0быстрого запуска в\u00A0любой момент.",
+        title: "В Spotlight и Dock",
+        description: "рядом с остальными приложениями.",
         soon: false,
       },
       {
-        title: "Своя иконка для приложения",
-        description:
-          "Назначьте собственную иконку, чтобы приложение было легко узнаваемым и\u00A0выглядело как\u00A0полноценный продукт.",
+        title: "Свои поля",
+        description: "заполни под задачу и запусти.",
         soon: false,
       },
       {
-        title: "Генерация форм для Prompt",
-        description:
-          "Промпт автоматически превращается в\u00A0удобную форму ввода, упрощая взаимодействие и\u00A0исключая ошибки.",
-        soon: true,
+        title: "Своё имя и иконка",
+        description: "как у любого приложения в Dock.",
+        soon: false,
       },
     ],
   },
 
   cta: {
-    title: "Увеличьте свою продуктивность\u00A0бесплатно!",
-    downloadButton: "Скачать для MacOS",
+    title: "Начни бесплатно. Pro — 7\u00A0дней.",
+    downloadButton: "Скачать для macOS",
   },
 
   plans: {
-    title: "Цены",
-    subtitle: "Начни бесплатно, разблокируй профессионально",
-    popular: "Самые популярные",
+    title: "Тарифы",
+    subtitle: "бесплатно, чтобы начать. Pro — если нужно больше.",
+    monthly: "Помесячно",
+    yearly: "За год",
+    saveBadge: "−26%",
+    popular: "Чаще выбирают",
+    trial: "7 дней бесплатно",
+    finePrint:
+      "Лимиты запросов — только на моделях Promptix. Со своим API-ключом запросы и модели не ограничены на любом тарифе. Сколько можно Prompt-as-App — зависит от\u00A0тарифа.",
     packages: [
       {
         name: "Бесплатно",
         price: "0₽",
         period: "/месяц",
-        description: "Идеально, чтобы попробовать Promptix",
+        yearlyPrice: "0₽",
+        yearlyPeriod: "/месяц",
+        description: "Чтобы попробовать",
         features: [
-          "50 запросов в\u00A0день",
-          "10\u00A0000 символов на\u00A0запрос",
-          "Используйте API-ключ для\u00A0любых моделей без ограничений",
+          "15 запросов Promptix в\u00A0день",
+          "До 10\u00A0000 символов на\u00A0запрос",
+          "1 Prompt-as-App",
+          "Базовые модели Promptix",
+          "Свои API-ключи — без лимита на запросы и\u00A0модели",
         ],
-        buttonTitle: "Скачать для MacOS",
+        buttonTitle: "Скачать для macOS",
       },
       {
         name: "Pro",
-        price: "350₽",
+        price: "999₽",
         period: "/месяц",
-        description: "Для повседневной работы с\u00A0ИИ",
+        yearlyPrice: "8\u00A0900₽",
+        yearlyPeriod: "/год",
+        description: "Если пользуешься каждый день",
         features: [
-          "500 запросов в\u00A0день",
-          "Без ограничений на\u00A0количество символов (ограничено моделью)",
-          "Больше AI-моделей — популярные модели от\u00A0OpenAI и\u00A0Grok",
+          "100 запросов Promptix в\u00A0день",
+          "Без лимита символов (остаётся лимит модели)",
+          "Сколько угодно Prompt-as-App",
+          "Все модели Promptix — OpenAI, Grok и\u00A0другие",
+          "Свои API-ключи — без лимита на запросы и\u00A0модели",
         ],
-        buttonTitle: "Скачать для MacOS",
+        buttonTitle: "Скачать для macOS",
       },
     ],
   },
 
   faq: {
-    title: "Вопросы и ответы",
+    title: "Вопросы",
     items: [
       {
-        question: "What is Promptix?",
+        question: "Что такое Promptix?",
         answer:
-          "Promptix is a tool that allows you to run AI in any app using a hotkey, helping with tasks like instant translation, text polishing, grammar fixes, summarization, and custom prompt creation. It supports macOS and integrates with various AI services.",
+          "Приложение для macOS: AI прямо в том окне, где ты сейчас. Хоткей на выделенном тексте — или сохрани промпт как отдельное приложение. Встроенные: перевести, переписать, улучшить, исправить ошибки, кратко. Плюс свои промпты.",
       },
       {
-        question: "How does Promptix work?",
+        question: "Как это работает?",
         answer:
-          "Select text in any app, press a hotkey, and choose an action like Translate, Rewrite, Improve text, Fix grammar, or Summarize. It sends only the selected data to your chosen AI service via your API key, processing everything directly without storing data externally.",
+          "Выдели текст, нажми хоткей, выбери действие. Или открой Prompt as App из «Программ», Spotlight или Dock. Можно брать модели Promptix или свой API-ключ. Уходит только тот текст, который ты сам выделил.",
       },
       {
-        question: "Is Promptix secure?",
-        answer:
-          "Yes, Promptix is secure. It transmits only the selected data you choose to process, and you have full control over what is sent.",
+        question: "Это безопасно?",
+        answer: "Отправляем только тот текст, который ты выбрал. Больше ничего.",
       },
       {
-        question: "Can I use my own API keys from different AI services?",
+        question: "Можно свои API-ключи разных сервисов?",
         answer:
-          "Yes, you can add your own API keys from services like OpenAI, Anthropic, Google, Mistral AI, DeepSeek, Cohere, or any LLM in OpenAI API format (including local LLMs). This makes usage unlimited and free, as requests go directly to the service without any costs from Promptix.",
+          "Да. OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere или любой API в формате OpenAI, включая локальные модели. Со своим ключом лимиты Promptix не действуют — расход идёт у твоего провайдера.",
       },
       {
-        question: "Can I create custom prompts?",
+        question: "Можно свои промпты?",
         answer:
-          "Yes, you can create and save custom prompts for specific tasks, which can be triggered via hotkey just like the built-in ones (Translate, Rewrite, etc.)",
+          "Да. Сохрани промпт и запускай хоткеем — или сделай из него Prompt as App.",
       },
       {
-        question: "What happens if I exceed request limits on the free plan?",
+        question: "Что такое Prompt as App?",
         answer:
-          "If you hit the daily limit without your own API key, you'll need to wait until the next day or upgrade to Pro. Adding your own API key removes all limits, making it free and unlimited.",
+          "Промпт превращается в обычный .app в «Программах». Имя, иконка, открывается как любое приложение. На бесплатном тарифе — одно. На Pro — сколько угодно.",
+      },
+      {
+        question: "Что, если кончатся запросы на бесплатном тарифе?",
+        answer:
+          "Запросы Promptix на бесплатном тарифе обновляются каждый день (15 в день). На Pro — 100 в день, все модели и сколько угодно Prompt-as-App. Со своим API-ключом эти лимиты не действуют. Лишние Prompt-as-App на бесплатном тарифе остаются установленными, но не откроются, пока не перейдёшь на Pro или не удалишь их.",
+      },
+      {
+        question: "Свой API-ключ снимает лимит на Prompt-as-App?",
+        answer:
+          "Нет. Ключ снимает лимиты на запросы и модели. Сколько можно Prompt-as-App — по тарифу: 1 на бесплатном, без ограничений на Pro.",
+      },
+      {
+        question: "Есть пробный период?",
+        answer:
+          "Да. У Pro — 7 дней. Отмени до конца пробного периода и останешься на бесплатном тарифе.",
+      },
+      {
+        question: "Чем помесячный Pro отличается от годового?",
+        answer:
+          "Pro стоит 999₽ в месяц или 8 900₽ в год (−26%). Возможности те же.",
       },
     ],
   },
 
   footer: {
-    copyright: "Все права защищены, 2025 ©",
-    legal: "IP Khudyshkina O.A. INN 450125033950",
+    copyright: "Все права защищены, 2026 ©",
+    legal: "ИП Худышкина О.А. ИНН 450125033950",
     personalDataPolicy: "Политика обработки персональных данных",
     termsOfService: "Условия использования",
     privacy: "Конфиденциальность",
+    promptAsApp: "Как приложение",
     pricing: "Тарифы",
-    faq: "FAQ",
+    faq: "Вопросы",
   },
 
   language: {
     switch: "Сменить язык",
     current: "RU",
-    russian: "Pусский",
+    russian: "Русский",
     english: "English",
   },
 
   cookieConsent: {
-    message: "Мы используем cookies, чтобы улучшить ваш опыт.",
+    message: "Мы используем cookies.",
     accept: "Ок",
   },
 
   terms: {
-    title: "Terms of Service",
+    title: "Условия использования",
     metaTitle: "Promptix – Условия использования",
     metaDescription:
-      "Условия использования Promptix — macOS-приложения для AI по хоткею: лицензия, правила и ответственность.",
+      "Условия использования Promptix: лицензия, правила и ответственность.",
     backToHome: "На главную",
-    lastUpdated: "Last updated: Oct, 2025",
+    lastUpdated: "Обновлено: август 2026",
     content: {
       intro:
-        "Promptix is a software service that allows users to select text and invoke predefined prompts via keyboard shortcuts on desktop and mobile devices. These Terms of Service (“Terms”) govern your access to and use of Promptix and any related software or documentation. By using Promptix, you acknowledge that you have read and understood these Terms and agree to be bound by them.",
+        "Promptix is a software service that allows users to select text and invoke predefined prompts via keyboard shortcuts on desktop and mobile devices. You can also save a prompt as a standalone Mac application (“Prompt as App”) and run it independently from Applications, Spotlight, Launchpad, or the Dock. These Terms of Service (“Terms”) govern your access to and use of Promptix and any related software or documentation. By using Promptix, you acknowledge that you have read and understood these Terms and agree to be bound by them.",
       sections: [
         {
           title: "1. Introduction",
           content:
-            "Promptix is a software service that allows users to select text and invoke predefined prompts via keyboard shortcuts on desktop and mobile devices. These Terms of Service (“Terms”) govern your access to and use of Promptix and any related software or documentation. By using Promptix, you acknowledge that you have read and understood these Terms and agree to be bound by them.",
+            "Promptix is a software service that allows users to select text and invoke predefined prompts via keyboard shortcuts on desktop and mobile devices. You can also save a prompt as a standalone Mac application (“Prompt as App”) and run it independently from Applications, Spotlight, Launchpad, or the Dock. These Terms of Service (“Terms”) govern your access to and use of Promptix and any related software or documentation. By using Promptix, you acknowledge that you have read and understood these Terms and agree to be bound by them.",
         },
         {
           title: "2. Acceptance of Terms",
@@ -224,7 +319,7 @@ export const ru: Translation = {
         {
           title: "3. Description of the Service",
           content:
-            "Promptix provides functionality to interact with selected text through user-configured prompts and hotkeys. It is designed to run on various operating systems and devices, and it may integrate with third-party APIs (for example, AI or web services) to perform certain functions or retrieve content. The developer does not control third-party services or APIs; therefore, any data transmitted or received via those services is subject to the terms, availability, and privacy policies of the respective third parties. We do not guarantee the accuracy, completeness, or availability of any third-party content. The features and interface of Promptix may change over time and can be updated at the developer’s discretion.",
+            "Promptix provides functionality to interact with selected text through user-configured prompts and hotkeys. You can also save a prompt as a standalone Mac application (“Prompt as App”) and run it independently from Applications, Spotlight, Launchpad, or the Dock. It is designed to run on various operating systems and devices, and it may integrate with third-party APIs (for example, AI or web services) to perform certain functions or retrieve content. The developer does not control third-party services or APIs; therefore, any data transmitted or received via those services is subject to the terms, availability, and privacy policies of the respective third parties. We do not guarantee the accuracy, completeness, or availability of any third-party content. The features and interface of Promptix may change over time and can be updated at the developer’s discretion.",
         },
         {
           title: "4. License to Use",
@@ -271,19 +366,19 @@ export const ru: Translation = {
   },
 
   privacy: {
-    title: "Privacy",
+    title: "Конфиденциальность",
     metaTitle: "Promptix – Конфиденциальность",
     metaDescription:
-      "Политика конфиденциальности Promptix: какие данные собираем, как обрабатываются AI-запросы, API-ключи и ваши права.",
+      "Какие данные собирает Promptix и как обрабатываются запросы.",
     backToHome: "На главную",
-    lastUpdated: "Last updated: Oct, 2025",
+    lastUpdated: "Обновлено: август 2026",
     intro:
       "Promptix (“we”, “our”, “us”) values your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the Promptix application (“App”) and related services.",
     sections: [
       {
         title: "1. Information We Collect",
         content:
-          "User-Provided Information: User Content (text you select and submit for processing); Account Information (email address and name — we do not collect your password or authentication tokens from providers); Payment Information (processed by Paddle; we receive limited transaction metadata). Automatically Collected Information: device type, OS version, interface language; usage statistics and error logs; truncated IP address for security and rate-limiting.",
+          "User-Provided Information: User Content (text you select, type, or paste for processing, including in Prompt-as-App windows); Account Information (email address and name — we do not collect your password or authentication tokens from providers); Payment Information (processed by Stripe and, where available, local payment providers; we receive limited transaction metadata). Automatically Collected Information: device type, OS version, interface language; usage statistics and error logs; truncated IP address for security and rate-limiting.",
       },
       {
         title: "3. How We Use Information",
@@ -303,7 +398,7 @@ export const ru: Translation = {
       {
         title: "6. Sharing & Disclosure",
         content:
-          "We share data only with: third-party AI providers (e.g., OpenAI) to process User Content; Paddle for secure payment processing; privacy-focused analytics providers (e.g., Plausible) for aggregated metrics; OAuth providers (Google, Apple, GitHub, etc.) for authentication. All third parties are required to adhere to applicable data protection laws (e.g., GDPR).",
+          "We share data only with: third-party AI providers (e.g., OpenAI) to process User Content; Stripe and, where available, local payment providers for secure payment processing; privacy-focused analytics providers (e.g., Plausible) for aggregated metrics; OAuth providers (Google, Apple, GitHub, etc.) for authentication. All third parties are required to adhere to applicable data protection laws (e.g., GDPR).",
       },
       {
         title: "7. International Transfers",
@@ -355,7 +450,7 @@ export const ru: Translation = {
       {
         title: "3. Категории персональных данных",
         content:
-          "Оператор может обрабатывать: данные учётной записи (адрес электронной почты, имя); пользовательский контент, передаваемый для обработки ИИ (выделенный текст); платёжные метаданные, получаемые от платёжного провайдера (Paddle); технические данные (тип устройства, версия ОС, язык интерфейса, усечённый IP-адрес, статистика использования и журналы ошибок).",
+          "Оператор может обрабатывать: данные учётной записи (адрес электронной почты, имя); пользовательский контент, передаваемый для обработки ИИ (выделенный, введённый или вставленный текст, в том числе в окнах Prompt-as-App); платёжные метаданные, получаемые от платёжных провайдеров (Stripe и, где доступно, локальные платёжные сервисы); технические данные (тип устройства, версия ОС, язык интерфейса, усечённый IP-адрес, статистика использования и журналы ошибок).",
       },
       {
         title: "4. Цели обработки",
@@ -375,7 +470,7 @@ export const ru: Translation = {
       {
         title: "7. Передача третьим лицам и трансграничная передача",
         content:
-          "Персональные данные могут передаваться: провайдерам ИИ (например, OpenAI) для обработки пользовательского контента; Paddle — для обработки платежей; провайдерам аналитики с фокусом на приватность (например, Plausible); OAuth-провайдерам (Google, Apple, GitHub и др.) — для аутентификации. Данные могут передаваться за пределы Российской Федерации, если это необходимо для предоставления Сервисов, при соблюдении применимых требований к защите данных.",
+          "Персональные данные могут передаваться: провайдерам ИИ (например, OpenAI) для обработки пользовательского контента; Stripe и, где доступно, локальным платёжным сервисам — для обработки платежей; провайдерам аналитики с фокусом на приватность (например, Plausible); OAuth-провайдерам (Google, Apple, GitHub и др.) — для аутентификации. Данные могут передаваться за пределы Российской Федерации, если это необходимо для предоставления Сервисов, при соблюдении применимых требований к защите данных.",
       },
       {
         title: "8. Права субъекта персональных данных",
@@ -401,45 +496,43 @@ export const ru: Translation = {
   },
 
   demo: {
-    title: "Как использовать?",
+    title: "Как пользоваться",
     metaTitle: "Promptix – Демо",
     metaDescription:
-      "Демо Promptix: установите на macOS, выдайте разрешения и переводите или генерируйте текст по хоткею.",
+      "Демо Promptix: установи на macOS, выдай доступ и переводи или пиши текст по хоткею.",
     backToHome: "На главную",
-    intro:
-      "Убедитесь, что все требования выполнены до начала использования Promptix",
+    intro: "Перед началом:",
     setup: {
       installed: {
         title: "1 — Установлено",
-        description: "Убедитесь, что Promptix установлен",
+        description: "Promptix установлен",
       },
       running: {
         title: "2 — Запущен",
-        description: "Promptix работает в фоновом режиме",
+        description: "Promptix работает в фоне",
       },
       permissions: {
-        title: "3 — Разрешения получены",
-        description: "Разрешения доступности включены для Promptix",
+        title: "3 — Доступ",
+        description: "Универсальный доступ для Promptix включён",
       },
     },
-    useCasesTitle: "Примеры использования",
+    useCasesTitle: "Попробуй",
     translation: {
       title: "Перевод",
-      instruction:
-        "Выделите текст, нажмите ⌘ + ^ и выберите команду Translate:",
+      instruction: "Выдели текст, нажми ⌘ + ^ и выбери «Перевести»:",
       sample: "안녕하세요, 어떻게 지내세요?",
     },
     generate: {
-      title: "Создайте текст",
+      title: "Написать текст",
       instruction:
-        "Введите текст, например «Напишите текст об искусственном интеллекте», выделите его и нажмите ⌘ + ^, чтобы выбрать опцию «Text as Prompt»:",
-      placeholder: "Напишите текст об искусственном интеллекте",
+        "Напиши что-нибудь вроде «Текст про ИИ», выдели, нажми ⌘ + ^ и выбери «Text as Prompt»:",
+      placeholder: "Текст про ИИ",
     },
   },
 
   pricingPage: {
     metaTitle: "Promptix – Тарифы",
     metaDescription:
-      "Тарифы Promptix: бесплатно 50 запросов в день или Pro за 350₽/мес. Свой API-ключ — без лимитов.",
+      "Тарифы Promptix: бесплатно 15 запросов в день и 1 Prompt-as-App или Pro за 999₽/мес или 8 900₽/год. 7 дней бесплатно.",
   },
 };

@@ -12,9 +12,11 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <SiteHeader />
-      <main>
+      <div className="px-mesh px-mesh--pricing-plan">
+        <SiteHeader />
         <PricingSection />
+      </div>
+      <main>
         <FaqSection />
         <section className="mx-auto max-w-3xl px-4 pb-20 text-center sm:px-6">
           <h2 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">

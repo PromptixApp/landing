@@ -1,11 +1,12 @@
 export const en = {
   meta: {
-    title: "Promptix — Run AI in any app with a hotkey",
+    title: "Promptix — Turn prompts into apps",
     description:
-      "One shortcut to edit, rewrite, and translate text. And a bit more. Right where you work.",
+      "Run a prompt as its own app from the Dock. Or select text and invoke AI with a shortcut in any window.",
   },
 
   nav: {
+    promptAsApp: "Prompt as App",
     pricing: "Pricing",
     faq: "FAQ",
     terms: "Terms of service",
@@ -14,172 +15,269 @@ export const en = {
   },
 
   header: {
-    title: "Stop switching between apps",
-    titleLine2: "and AI tools",
-    subtitle:
-      "One shortcut to edit, rewrite, and translate text. And\u00A0a\u00A0bit more. Right\u00A0where you\u00A0work.",
-    downloadButton: "Download for MacOS",
-    downloadHint: "free to start · no credit card",
-    compatibility: "Supporting AI services",
-    compatibilityNote: "and other compatible with OpenAI SDK",
+    title: "Turn prompts into apps",
+    titleLine2: "From the Dock and Spotlight —",
+    subtitle: "or with a shortcut in any app.",
+    downloadButton: "Download for macOS",
+    downloadHint: "Free to start · 7-day Pro trial",
+    demoAria: "Promptix demo",
+    demoClose: "Close",
+    compatibility: "Works with",
+    compatibilityNote: "and any OpenAI-compatible API",
+  },
+
+  heroScene: {
+    appName: "Mail",
+    clock: "Wed 11:46",
+    toLabel: "To",
+    toValue: "Team",
+    subjectLabel: "Subject",
+    subjectValue: "Mars flight",
+    before:
+      "Hello team, we has achieved important success in the Mars flight. Tests was very positive.",
+    after:
+      "Hello team, we have achieved important success in the Mars flight. Tests were very positive.",
+    model: "Default model",
+    select: "Select ↵",
+    esc: "Esc ✕",
+    run: "↵",
+    hint: "↑↓ navigate • Enter run • Esc close",
+    appField: "Text",
+    appRun: "Run",
+    appPin: "Pin on top",
+    prompts: [
+      "Translate",
+      "Rewrite",
+      "Improve text",
+      "Fix grammar",
+      "Summarize",
+    ],
+    destinations: ["Popover", "Rewrite", "Notification"],
   },
 
   useCases: {
-    title: "Use cases",
-    subtitle:
-      "Automate routine tasks and free up time for more important tasks. Use the product in\u00A0any application.",
+    title: "Or in any app",
+    subtitle: "select text, press a shortcut,\u00A0done.",
+    placeholder: "Write a message...",
+    hotkeyHint: "Press shortcut",
     list: [
       {
-        title: "Fix Grammar",
-        description:
-          "Automatically fix grammar and spelling without breaking your\u00A0flow.",
-        videoSrc: "/media/promptix-fix.mp4",
+        title: "Fix grammar",
+        description: "typos and grammar, without leaving the\u00A0window.",
+        scene: {
+          before: "Hi, ho a y",
+          after: "Hi, how are you?",
+        },
       },
       {
         title: "Translate",
-        description:
-          "Instantly translate selected text to any language with a\u00A0single shortcut.",
-        videoSrc: "/media/promptix-translate.mp4",
+        description: "the selection to any language.",
+        scene: {
+          before: "Hi, how are you?",
+          after: "Salut, comment vas-tu ?",
+        },
       },
       {
-        title: "Generate text",
-        description: "Create emails, posts, and notes in\u00A0seconds.",
-        videoSrc: "/media/promptix-gen-text.mp4",
+        title: "Write text",
+        description: "for an email, a post, or a note from a short\u00A0prompt.",
+        scene: {
+          before: "write a post about GPT-5",
+          after:
+            "GPT-5 is out. More context, better answers — still just a chat.",
+        },
       },
     ],
   },
 
   feature: {
-    eyebrow: "Feature",
-    title: "Create your own prompts for\u00A0your\u00A0tasks",
-    titleLine2: "and use them\u00A0anytime",
-    videoSrc: "/media/promptix-new.mp4",
+    eyebrow: "Prompts",
+    title: "Automate",
+    titleLine2: "your routine tasks",
+    form: {
+      title: "Describe the task",
+      subtitle: "Say what you need. Promptix writes the prompt.",
+      sample: "Translate selected text to English and keep the tone",
+      generate: "Generate",
+      cancel: "Cancel",
+      previewItems: [
+        "Translate",
+        "Rewrite",
+        "Improve text",
+        "Fix grammar",
+        "Summarize",
+      ],
+    },
     items: [
       {
-        name: "API Key",
-        description:
-          "Use your own API keys without limits on the number of\u00A0requests",
+        name: "Describe the task",
+        description: "and Promptix writes the\u00A0prompt.",
       },
       {
-        name: "5 built‑in prompts",
-        description:
-          "Translate, Rewrite, Improve text, Fix grammar, Summarize",
+        name: "Assign a shortcut",
+        description: "and run it from any\u00A0app.",
       },
       {
-        name: "Compatible with OpenAI SDK",
-        description: "Use any LLM that supports the OpenAI API\u00A0format",
+        name: "5 built-in prompts",
+        description:
+          "Translate, Rewrite, Improve text, Fix grammar, Summarize.",
+      },
+      {
+        name: "By voice",
+        description: "speak, pick a prompt, run.",
       },
     ],
   },
 
+  apiBalance: {
+    eyebrow: "Extra",
+    title: "Watch the balance",
+    description: "of your AI providers.",
+    menu: {
+      openActions: "Open actions",
+      settings: "Settings",
+      latestResponse: "Latest response",
+      checkUpdates: "Check updates",
+      quit: "Quit Promptix",
+      spent: "spent",
+    },
+  },
+
   promptAsApp: {
-    badge: "Alpha version",
-    title: "Prompt as App",
-    description:
-      "Is a feature that lets you turn a prompt into a standalone application. You define the app’s behavior using a\u00A0prompt, save it as an\u00A0app, and run it independently — without rewriting or reconfiguring the prompt each\u00A0time.",
-    downloadButton: "Download for MacOS",
-    videoSrc: "/media/0814-1.mp4",
+    title: "Prompt as App,",
+    description: "open, fill\u00A0in, run.",
+    downloadButton: "Download for macOS",
     items: [
       {
-        title: "App in Launchpad",
-        description:
-          "The created app appears in the Launchpad, allowing quick and easy access at\u00A0any\u00A0time.",
+        title: "In Spotlight and the Dock",
+        description: "next to your other apps.",
         soon: false,
       },
       {
-        title: "Custom icon for App",
-        description:
-          "Assign a custom icon to make your app easily recognizable and feel like a\u00A0real product.",
+        title: "Your own fields",
+        description: "fill them in and run.",
         soon: false,
       },
       {
-        title: "Form generation for Prompt",
-        description:
-          "The prompt is automatically converted into a structured input form, making interaction simpler and reducing\u00A0errors.",
-        soon: true,
+        title: "Your name and icon",
+        description: "like any app on the Dock.",
+        soon: false,
       },
     ],
   },
 
   cta: {
-    title: "Boost Your Productivity for\u00A0Free!",
-    downloadButton: "Download for MacOS",
+    title: "Start free. Try Pro for 7\u00A0days.",
+    downloadButton: "Download for macOS",
   },
 
   plans: {
-    title: "Pricing plans",
-    subtitle: "Start for Free, Unlock\u00A0Pro",
+    title: "Pricing",
+    subtitle: "free to start. Pro when you need more.",
+    monthly: "Monthly",
+    yearly: "Yearly",
+    saveBadge: "Save 26%",
     popular: "Most popular",
+    trial: "7-day free trial",
+    finePrint:
+      "Request limits apply only to Promptix models. With your own API key, requests and models are unlimited on both plans. How many Prompt-as-Apps you get still depends on the\u00A0plan.",
     packages: [
       {
         name: "Free",
         price: "$0",
         period: "/month",
-        description: "Perfect to try Promptix",
+        yearlyPrice: "$0",
+        yearlyPeriod: "/month",
+        description: "To try Promptix",
         features: [
-          "50 requests per\u00A0day",
-          "10000 characters per\u00A0request",
-          "Use API key without limits and any\u00A0models",
+          "15 Promptix requests a\u00A0day",
+          "Up to 10,000 characters per\u00A0request",
+          "1 Prompt-as-App",
+          "Basic Promptix models",
+          "Your own API keys — no request or model\u00A0cap",
         ],
-        buttonTitle: "Download for MacOS",
+        buttonTitle: "Download for macOS",
       },
       {
         name: "Pro",
-        price: "$4.99",
+        price: "$9.99",
         period: "/month",
-        description: "For everyday AI work on your\u00A0Mac",
+        yearlyPrice: "$89",
+        yearlyPeriod: "/year",
+        description: "If you use AI every\u00A0day",
         features: [
-          "500 requests per\u00A0day",
-          "Unlimited characters per request (limit by\u00A0model)",
-          "More AI models — popular models from OpenAI and\u00A0Grok",
+          "100 Promptix requests a\u00A0day",
+          "No character cap (the model’s limit still applies)",
+          "Unlimited Prompt-as-Apps",
+          "All Promptix models — OpenAI, Grok, and\u00A0more",
+          "Your own API keys — no request or model\u00A0cap",
         ],
-        buttonTitle: "Download for MacOS",
+        buttonTitle: "Download for macOS",
       },
     ],
   },
 
   faq: {
-    title: "FAQs",
+    title: "FAQ",
     items: [
       {
         question: "What is Promptix?",
         answer:
-          "Promptix is a tool that allows you to run AI in any app using a hotkey, helping with tasks like instant translation, text polishing, grammar fixes, summarization, and custom prompt creation. It supports macOS and integrates with various AI services.",
+          "A macOS app that runs AI in the app you’re in. Hotkey on selected text, or save a prompt as its own app. Built-in: Translate, Rewrite, Improve text, Fix grammar, Summarize — plus your own prompts.",
       },
       {
         question: "How does Promptix work?",
         answer:
-          "Select text in any app, press a hotkey, and choose an action like Translate, Rewrite, Improve text, Fix grammar, or Summarize. It sends only the selected data to your chosen AI service via your API key, processing everything directly without storing data externally.",
+          "Select text in any app, press a hotkey, pick an action. Or open a Prompt as App from Applications, Spotlight, or the Dock. Use Promptix models or your own API key. Only the text you select is sent.",
       },
       {
         question: "Is Promptix secure?",
-        answer:
-          "Yes, Promptix is secure. It transmits only the selected data you choose to process, and you have full control over what is sent.",
+        answer: "We send only the text you choose to process. Nothing else.",
       },
       {
         question: "Can I use my own API keys from different AI services?",
         answer:
-          "Yes, you can add your own API keys from services like OpenAI, Anthropic, Google, Mistral AI, DeepSeek, Cohere, or any LLM in OpenAI API format (including local LLMs). This makes usage unlimited and free, as requests go directly to the service without any costs from Promptix.",
+          "Yes. OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, or any OpenAI-compatible API — including local models. With your own key, Promptix request limits don’t apply. Usage goes to your provider.",
       },
       {
         question: "Can I create custom prompts?",
         answer:
-          "Yes, you can create and save custom prompts for specific tasks, which can be triggered via hotkey just like the built-in ones (Translate, Rewrite, etc.)",
+          "Yes. Save your own prompts and run them with a hotkey, or turn any of them into a Prompt as App.",
+      },
+      {
+        question: "What is Prompt as App?",
+        answer:
+          "It turns a prompt into a real .app in Applications. Name it, pick an icon, open it like any Mac app. Free includes 1. Pro is unlimited.",
       },
       {
         question: "What happens if I exceed request limits on the free plan?",
         answer:
-          "If you hit the daily limit without your own API key, you'll need to wait until the next day or upgrade to Pro. Adding your own API key removes all limits, making it free and unlimited.",
+          "Promptix requests on Free reset every day (15 per day). Pro gets 100 a day, all models, and unlimited Prompt-as-Apps. Or add your own API key and skip those limits. Extra Prompt-as-Apps stay installed on Free, but they won’t open until you upgrade or delete them.",
+      },
+      {
+        question: "Does my API key remove the Prompt-as-App limit?",
+        answer:
+          "No. Your key removes request and model limits. Prompt-as-App count still follows the plan: 1 on Free, unlimited on Pro.",
+      },
+      {
+        question: "Is there a free trial?",
+        answer:
+          "Yes. Pro has a 7-day trial. Cancel before it ends and you stay on Free.",
+      },
+      {
+        question: "What’s the difference between monthly and yearly Pro?",
+        answer:
+          "Pro is $9.99 a month or $89 a year (26% off). Same features.",
       },
     ],
   },
 
   footer: {
-    copyright: "All rights reserved, 2025 ©",
+    copyright: "All rights reserved, 2026 ©",
     legal: "IP Khudyshkina O.A. INN 450125033950",
     personalDataPolicy: "Политика обработки персональных данных",
     termsOfService: "Terms of service",
     privacy: "Privacy",
+    promptAsApp: "Prompt as App",
     pricing: "Pricing",
     faq: "FAQ",
   },
@@ -187,12 +285,12 @@ export const en = {
   language: {
     switch: "Switch language",
     current: "EN",
-    russian: "Pусский",
+    russian: "Русский",
     english: "English",
   },
 
   cookieConsent: {
-    message: "We use cookies to improve your experience.",
+    message: "We use cookies.",
     accept: "Ok",
   },
 
@@ -202,15 +300,15 @@ export const en = {
     metaDescription:
       "Terms of Service for Promptix — the macOS app that runs AI on selected text via a hotkey. License, usage rules, and liability.",
     backToHome: "Back to Home",
-    lastUpdated: "Last updated: Oct, 2025",
+    lastUpdated: "Last updated: August 2026",
     content: {
       intro:
-        "Promptix is a software service that allows users to select text and invoke predefined prompts via keyboard shortcuts on desktop and mobile devices. These Terms of Service (“Terms”) govern your access to and use of Promptix and any related software or documentation. By using Promptix, you acknowledge that you have read and understood these Terms and agree to be bound by them.",
+        "Promptix is a software service that allows users to select text and invoke predefined prompts via keyboard shortcuts on desktop and mobile devices. You can also save a prompt as a standalone Mac application (“Prompt as App”) and run it independently from Applications, Spotlight, Launchpad, or the Dock. These Terms of Service (“Terms”) govern your access to and use of Promptix and any related software or documentation. By using Promptix, you acknowledge that you have read and understood these Terms and agree to be bound by them.",
       sections: [
         {
           title: "1. Introduction",
           content:
-            "Promptix is a software service that allows users to select text and invoke predefined prompts via keyboard shortcuts on desktop and mobile devices. These Terms of Service (“Terms”) govern your access to and use of Promptix and any related software or documentation. By using Promptix, you acknowledge that you have read and understood these Terms and agree to be bound by them.",
+            "Promptix is a software service that allows users to select text and invoke predefined prompts via keyboard shortcuts on desktop and mobile devices. You can also save a prompt as a standalone Mac application (“Prompt as App”) and run it independently from Applications, Spotlight, Launchpad, or the Dock. These Terms of Service (“Terms”) govern your access to and use of Promptix and any related software or documentation. By using Promptix, you acknowledge that you have read and understood these Terms and agree to be bound by them.",
         },
         {
           title: "2. Acceptance of Terms",
@@ -220,7 +318,7 @@ export const en = {
         {
           title: "3. Description of the Service",
           content:
-            "Promptix provides functionality to interact with selected text through user-configured prompts and hotkeys. It is designed to run on various operating systems and devices, and it may integrate with third-party APIs (for example, AI or web services) to perform certain functions or retrieve content. The developer does not control third-party services or APIs; therefore, any data transmitted or received via those services is subject to the terms, availability, and privacy policies of the respective third parties. We do not guarantee the accuracy, completeness, or availability of any third-party content. The features and interface of Promptix may change over time and can be updated at the developer’s discretion.",
+            "Promptix provides functionality to interact with selected text through user-configured prompts and hotkeys. You can also save a prompt as a standalone Mac application (“Prompt as App”) and run it independently from Applications, Spotlight, Launchpad, or the Dock. It is designed to run on various operating systems and devices, and it may integrate with third-party APIs (for example, AI or web services) to perform certain functions or retrieve content. The developer does not control third-party services or APIs; therefore, any data transmitted or received via those services is subject to the terms, availability, and privacy policies of the respective third parties. We do not guarantee the accuracy, completeness, or availability of any third-party content. The features and interface of Promptix may change over time and can be updated at the developer’s discretion.",
         },
         {
           title: "4. License to Use",
@@ -272,14 +370,14 @@ export const en = {
     metaDescription:
       "Privacy Policy for Promptix: what data we collect, how AI requests are handled, API keys, and your rights.",
     backToHome: "Back to Home",
-    lastUpdated: "Last updated: Oct, 2025",
+    lastUpdated: "Last updated: August 2026",
     intro:
       "Promptix (“we”, “our”, “us”) values your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the Promptix application (“App”) and related services.",
     sections: [
       {
         title: "1. Information We Collect",
         content:
-          "User-Provided Information: User Content (text you select and submit for processing); Account Information (email address and name — we do not collect your password or authentication tokens from providers); Payment Information (processed by Paddle; we receive limited transaction metadata). Automatically Collected Information: device type, OS version, interface language; usage statistics and error logs; truncated IP address for security and rate-limiting.",
+          "User-Provided Information: User Content (text you select, type, or paste for processing, including in Prompt-as-App windows); Account Information (email address and name — we do not collect your password or authentication tokens from providers); Payment Information (processed by Stripe and, where available, local payment providers; we receive limited transaction metadata). Automatically Collected Information: device type, OS version, interface language; usage statistics and error logs; truncated IP address for security and rate-limiting.",
       },
       {
         title: "3. How We Use Information",
@@ -299,7 +397,7 @@ export const en = {
       {
         title: "6. Sharing & Disclosure",
         content:
-          "We share data only with: third-party AI providers (e.g., OpenAI) to process User Content; Paddle for secure payment processing; privacy-focused analytics providers (e.g., Plausible) for aggregated metrics; OAuth providers (Google, Apple, GitHub, etc.) for authentication. All third parties are required to adhere to applicable data protection laws (e.g., GDPR).",
+          "We share data only with: third-party AI providers (e.g., OpenAI) to process User Content; Stripe and, where available, local payment providers for secure payment processing; privacy-focused analytics providers (e.g., Plausible) for aggregated metrics; OAuth providers (Google, Apple, GitHub, etc.) for authentication. All third parties are required to adhere to applicable data protection laws (e.g., GDPR).",
       },
       {
         title: "7. International Transfers",
@@ -351,7 +449,7 @@ export const en = {
       {
         title: "3. Categories of personal data",
         content:
-          "The Operator may process: account data (e-mail address, name); user content submitted for AI processing (selected text); payment metadata received from the payment provider (Paddle); technical data (device type, OS version, interface language, truncated IP address, usage statistics, and error logs).",
+          "The Operator may process: account data (e-mail address, name); user content submitted for AI processing (text you select, type, or paste, including in Prompt-as-App windows); payment metadata received from payment providers (Stripe and, where available, local payment providers); technical data (device type, OS version, interface language, truncated IP address, usage statistics, and error logs).",
       },
       {
         title: "4. Purposes of processing",
@@ -371,7 +469,7 @@ export const en = {
       {
         title: "7. Third parties and transfers",
         content:
-          "Personal data may be disclosed to: AI providers (e.g., OpenAI) to process user content; Paddle for payment processing; privacy-focused analytics providers (e.g., Plausible); and OAuth providers (Google, Apple, GitHub, etc.) for authentication. Data may be transferred outside the Russian Federation where necessary to provide the Services, subject to applicable safeguards.",
+          "Personal data may be disclosed to: AI providers (e.g., OpenAI) to process user content; Stripe and, where available, local payment providers for payment processing; privacy-focused analytics providers (e.g., Plausible); and OAuth providers (Google, Apple, GitHub, etc.) for authentication. Data may be transferred outside the Russian Federation where necessary to provide the Services, subject to applicable safeguards.",
       },
       {
         title: "8. Data subject rights",
@@ -397,45 +495,44 @@ export const en = {
   },
 
   demo: {
-    title: "How to use?",
+    title: "How to use it",
     metaTitle: "Promptix – Demo",
     metaDescription:
-      "Quick Promptix demo: install on macOS, grant permissions, then translate or generate text with a hotkey.",
+      "Promptix demo: install on macOS, grant Accessibility, then translate or write text with a hotkey.",
     backToHome: "Back to Home",
-    intro: "Ensure that all requirements are fulfilled before you start using Promptix",
+    intro: "Before you start:",
     setup: {
       installed: {
         title: "1 — Installed",
-        description: "Check that Promptix is installed",
+        description: "Promptix is installed",
       },
       running: {
         title: "2 — Running",
-        description: "Promptix is currently running in the background",
+        description: "Promptix is running in the background",
       },
       permissions: {
-        title: "3 — Permissions granted",
-        description: "Accessibility permissions are enabled for Promptix",
+        title: "3 — Permissions",
+        description: "Accessibility is on for Promptix",
       },
     },
-    useCasesTitle: "Use cases",
+    useCasesTitle: "Try it",
     translation: {
-      title: "Translation",
-      instruction:
-        "Select the text and press ⌘ + ^ and select prompt Translate:",
+      title: "Translate",
+      instruction: "Select the text, press ⌘ + ^, and pick Translate:",
       sample: "안녕하세요, 어떻게 지내세요?",
     },
     generate: {
-      title: "Generate text",
+      title: "Write text",
       instruction:
-        "Enter text, example 'Write text about AI' select it and press ⌘ + ^ to select the 'Text as Prompt' option:",
-      placeholder: "Write text about AI",
+        "Type something like “Write about AI”, select it, press ⌘ + ^, then pick “Text as Prompt”:",
+      placeholder: "Write about AI",
     },
   },
 
   pricingPage: {
     metaTitle: "Promptix – Pricing",
     metaDescription:
-      "Promptix pricing: Free plan with 50 requests/day, or Pro at $4.99/mo. Bring your own API key for unlimited use.",
+      "Promptix pricing: Free with 15 requests/day and 1 Prompt-as-App, or Pro at $9.99/mo or $89/year. 7-day free trial.",
   },
 };
 

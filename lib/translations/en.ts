@@ -147,6 +147,7 @@ export const en = {
     title: "Prompt as App,",
     description: "open, fill\u00A0in, run.",
     downloadButton: "Download for macOS",
+    catalogLink: "Browse Apps catalog",
     items: [
       {
         title: "In Spotlight and the Dock",

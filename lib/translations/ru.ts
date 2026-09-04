@@ -148,6 +148,7 @@ export const ru: Translation = {
     title: "Промпт как приложение,",
     description: "открой, заполни, запусти.",
     downloadButton: "Скачать для macOS",
+    catalogLink: "Каталог приложений",
     items: [
       {
         title: "В Spotlight и Dock",

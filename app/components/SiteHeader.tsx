@@ -32,7 +32,6 @@ export default function SiteHeader() {
   const menuId = useId();
   const home = localePath(locale, '/');
   const pricing = localePath(locale, '/pricing/');
-  const promptAsApp = `${home}#prompt-as-app`;
   const faq = `${home}#faq`;
 
   useEffect(() => {
@@ -86,16 +85,6 @@ export default function SiteHeader() {
               data-visible={panelVisible ? '' : undefined}
               className="px-nav-menu"
             >
-              <Link
-                href={promptAsApp}
-                onClick={(event) => {
-                  setOpen(false);
-                  scrollHomeHash(event, home, '#prompt-as-app');
-                }}
-                className="px-nav-menu-item"
-              >
-                {t.nav.promptAsApp}
-              </Link>
               <a
                 href="https://apps.promptix.app"
                 className="px-nav-menu-item"
@@ -146,13 +135,6 @@ export default function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-base font-medium tracking-tight text-[var(--foreground)] md:flex">
-          <Link
-            href={promptAsApp}
-            onClick={(event) => scrollHomeHash(event, home, '#prompt-as-app')}
-            className="px-nav-link pressable"
-          >
-            {t.nav.promptAsApp}
-          </Link>
           <a
             href="https://apps.promptix.app"
             className="px-nav-link pressable"

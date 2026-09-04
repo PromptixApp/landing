@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  ArrowRight,
   MagicWand,
   Sparkle,
   SquaresFour,
@@ -85,8 +86,15 @@ export default function Home() {
                     {t.promptAsApp.description}
                   </span>
                 </h2>
-                <div className="mt-6">
+                <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                   <DownloadButton label={t.promptAsApp.downloadButton} />
+                  <a
+                    href="https://apps.promptix.app"
+                    className="pressable inline-flex items-center gap-1.5 text-lg font-medium text-[var(--muted)] hover:text-[var(--foreground)]"
+                  >
+                    {t.promptAsApp.catalogLink}
+                    <ArrowRight className="size-4" weight="bold" />
+                  </a>
                 </div>
               </div>
               <div className="overflow-hidden rounded-2xl border-2 border-white/70 shadow-[0_16px_48px_-12px_rgba(0,0,0,0.28),0_4px_16px_-4px_rgba(0,0,0,0.12)]">

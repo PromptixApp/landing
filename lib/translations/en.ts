@@ -7,6 +7,7 @@ export const en = {
 
   nav: {
     promptAsApp: "Prompt as App",
+    promptApps: "Prompt Apps",
     pricing: "Pricing",
     faq: "FAQ",
     terms: "Terms of service",
@@ -278,6 +279,7 @@ export const en = {
     termsOfService: "Terms of service",
     privacy: "Privacy",
     promptAsApp: "Prompt as App",
+    promptApps: "Prompt Apps",
     pricing: "Pricing",
     faq: "FAQ",
   },

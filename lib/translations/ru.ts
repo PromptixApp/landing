@@ -9,6 +9,7 @@ export const ru: Translation = {
 
   nav: {
     promptAsApp: "Как приложение",
+    promptApps: "Prompt Apps",
     pricing: "Тарифы",
     faq: "Вопросы",
     terms: "Условия использования",
@@ -279,6 +280,7 @@ export const ru: Translation = {
     termsOfService: "Условия использования",
     privacy: "Конфиденциальность",
     promptAsApp: "Как приложение",
+    promptApps: "Prompt Apps",
     pricing: "Тарифы",
     faq: "Вопросы",
   },

@@ -29,6 +29,12 @@ export default function SiteFooter() {
             >
               {t.footer.promptAsApp}
             </Link>
+            <a
+              href="https://apps.promptix.app"
+              className="hover:text-[var(--foreground)]"
+            >
+              {t.footer.promptApps}
+            </a>
             <Link
               href={localePath(locale, '/pricing/')}
               className="hover:text-[var(--foreground)]"

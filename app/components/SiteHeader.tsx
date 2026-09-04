@@ -96,6 +96,13 @@ export default function SiteHeader() {
               >
                 {t.nav.promptAsApp}
               </Link>
+              <a
+                href="https://apps.promptix.app"
+                className="px-nav-menu-item"
+                onClick={() => setOpen(false)}
+              >
+                {t.nav.promptApps}
+              </a>
               <Link
                 href={pricing}
                 onClick={() => setOpen(false)}
@@ -146,6 +153,12 @@ export default function SiteHeader() {
           >
             {t.nav.promptAsApp}
           </Link>
+          <a
+            href="https://apps.promptix.app"
+            className="px-nav-link pressable"
+          >
+            {t.nav.promptApps}
+          </a>
           <Link href={pricing} className="px-nav-link pressable">
             {t.nav.pricing}
           </Link>

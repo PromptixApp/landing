@@ -44,6 +44,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
+              gtag('config', 'G-8Q65N9RD8E');
               gtag('config', 'AW-17526347150');
               
               function gtag_report_conversion(url) {
